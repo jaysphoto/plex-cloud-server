@@ -1,0 +1,18 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: puppet_apply
+  require_chef_omnibus: false
+  require_chef_for_busser: false
+  manifests_path: manifests
+  modules_path: modules
+  hiera_data_path: data
+
+platforms:
+  - name: centos-7
+  - name: centos-8.0
+
+suites:
+  - name: plex

@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 2.4 # Ruby 2.5 not supported yet?
+  Exclude:
+    - 'Puppetfile'
+    - 'modules/**/*'
+
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+Style/FrozenStringLiteralComment:
+  Enabled: false

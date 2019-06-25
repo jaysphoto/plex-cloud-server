@@ -1,0 +1,23 @@
+# Defaults
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
+/.idea
+
+# Ruby
+Gemfile.lock
+.bundle/**
+/.rakeTasks
+
+# Test Kitchen
+.kitchen
+.tmp
+kitchen.local.yml
+
+# Puppet
+.librarian/**
+modules/**

@@ -1,0 +1,16 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+
+provisioner:
+  name: puppet_apply
+  manifests_path: manifests
+  modules_path: modules
+  hiera_data_path: hieradata
+
+platforms:
+  - name: centos-7.0
+
+suites:
+  - name: default
