@@ -4,27 +4,13 @@ require 'kitchen/rake_tasks'
 module TestKitchen
   def self.kitchen_config(environment)
     case environment
-    when 'cloud'
-      raise ArgumentError 'Cloud environment not supported'
-      # kitchen_config_cloud
     when 'docker'
-      loader = Kitchen::Loader::YAML.new(project_config: './.kitchen.docker.yml')
-      Kitchen::Config.new(loader: loader)
+      loader = Kitchen::Loader::YAML.new(local_config: './kitchen.docker.yml', project_config: './kitchen.yml')
     when 'vagrant'
-      Kitchen::Config.new
+      loader = Kitchen::Loader::YAML.new(project_config: './kitchen.yml')
     else
       raise ArgumentError, 'Unknown environment, try vagrant/docker/cloud', environment
     end
-  end
-
-  def self.kitchen_config_cloud
-    %w[AWS_SSH_KEY_ID AWS_SSH_KEY AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY].each do |conf|
-      unless ENV[conf]
-        value = `source ~/.awssecret 2>/dev/null && echo $#{conf}`.chomp
-        ENV[conf] = value unless value.empty?
-      end
-    end
-    loader = Kitchen::Loader::YAML.new(project_config: './.kitchen.cloud.yml')
     Kitchen::Config.new(loader: loader)
   end
 

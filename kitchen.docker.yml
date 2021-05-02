@@ -1,16 +1,15 @@
 ---
 driver:
   name: docker
-  use_sudo: false
+  use_sudo: <%= ENV['DOCKER_SUDO'] %>
 
 provisioner:
   name: puppet_apply
+  require_chef_omnibus: false
+  require_chef_for_busser: false
   manifests_path: manifests
   modules_path: modules
-  hiera_data_path: hieradata
-
-platforms:
-  - name: centos-7.0
+  hiera_data_path: data
 
 suites:
   - name: default

@@ -13,7 +13,7 @@ namespace :integration do
       args.with_defaults(environment: 'docker', instance: 'all')
       TestKitchen.test(args[:environment], args[:instance], %w[converge verify])
     end
-  rescue LoadError
-    puts 'Kitchen gem could not be loaded, omitting task'
+  rescue LoadError => err
+    puts "Kitchen gem could not be loaded (#{err}), omitting task"
   end
 end

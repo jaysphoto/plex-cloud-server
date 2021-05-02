@@ -1,0 +1,16 @@
+version: ~> 1.0
+
+language: ruby
+bundler_args: $BUNDLER_ARGS
+rvm:
+  - "2.7"
+
+sudo: required
+services:
+  - docker
+env:
+  - RAKE_TASK=test                               BUNDLER_ARGS=""
+  - RAKE_TASK=integration:test[docker,centos-7]  BUNDLER_ARGS="--with integration"
+  - RAKE_TASK=integration:test[docker,centos-80] BUNDLER_ARGS="--with integration"
+
+script: rake $RAKE_TASK
