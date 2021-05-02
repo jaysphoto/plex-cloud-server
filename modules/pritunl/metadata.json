@@ -1,0 +1,33 @@
+{
+  "name": "pritunl",
+  "version": "0.0.1",
+  "author": "Jay (Geoffrey) De Kleijn",
+  "source": "https://github.com/jaysphoto/puppet-pritunl",
+  "summary": "Pritunl OpenVPN server",
+  "license": "MIT",
+  "dependencies": [
+    {
+      "name": "puppetlabs/yumrepo_core",
+      "version_requirement": ">=1.0.3 <2.0.0"
+    }
+  ],
+  "data_provider": null,
+  "tags": [
+    "pritunl", "openvpn"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.0.0 < 7.0.0"
+    }
+  ]
+}

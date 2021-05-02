@@ -21,3 +21,5 @@ kitchen.local.yml
 # Puppet
 .librarian/**
 modules/**
+!modules/pritunl
+!modules/pritunl/**

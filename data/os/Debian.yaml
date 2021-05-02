@@ -1,0 +1,12 @@
+---
+yum::managed_repos:
+    - 'epel'
+    - 'pritunl'
+yum::repos:
+    pritunl:
+        ensure: 'present'
+        enabled: true
+        descr: 'Pritunl Repository'
+        baseurl: "https://repo.pritunl.com/stable/yum/centos/${::facts['os']['release']['major']}/"
+        gpgcheck: true
+        gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-pritunl'
