@@ -2,14 +2,15 @@
 driver:
   name: docker
   use_sudo: <%= ENV['DOCKER_SUDO'] %>
+  run_command: /sbin/init
+  privileged: true
+  provision_command:
+    - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
+    - systemctl enable sshd.service
+  cap_add:
+    - SYS_ADMIN
+  volume:
+    - /sys/fs/cgroup
 
-provisioner:
-  name: puppet_apply
-  require_chef_omnibus: false
-  require_chef_for_busser: false
-  manifests_path: manifests
-  modules_path: modules
-  hiera_data_path: data
-
-suites:
-  - name: default
+platforms:
+  - name: centos-7

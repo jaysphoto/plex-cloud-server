@@ -1,2 +1,4 @@
-require 'plex'
-require 'pritunl'
+node default {
+  include ::plex
+  include ::pritunl
+}
