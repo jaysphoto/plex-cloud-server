@@ -4,8 +4,8 @@ namespace :style do
     require 'rubocop/rake_task'
     desc 'Run Ruby style checks'
     RuboCop::RakeTask.new(:ruby)
-  rescue LoadError
-    puts 'Rubocop gem could not be loaded, omitting task'
+  rescue LoadError => err
+    puts "Rubocop gem could not be loaded (#{err}), omitting task"
   end
 end
 
