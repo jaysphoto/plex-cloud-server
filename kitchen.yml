@@ -8,7 +8,6 @@ provisioner:
   require_chef_for_busser: false
   manifests_path: manifests
   modules_path: modules
-  hiera_data_path: data
 
 verifier: serverspec
 

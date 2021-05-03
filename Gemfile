@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 ruby '>2.0'
 
-gem 'berkshelf'
 gem 'librarian-puppet'
 gem 'puppet'
 gem 'rake'
