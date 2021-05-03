@@ -9,7 +9,11 @@ sudo: required
 services:
   - docker
 env:
-  - RAKE_TASK=test                               BUNDLER_ARGS=""
-  - RAKE_TASK=integration:test[docker,centos-7]  BUNDLER_ARGS="--with integration"
+  - RAKE_TASK=test                               BUNDLER_ARGS="--without integration"
+  - RAKE_TASK=integration:test[docker,centos-7]  BUNDLER_ARGS=""
+
+branches:
+  only:
+  - master
 
 script: rake $RAKE_TASK
