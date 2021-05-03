@@ -8,6 +8,3 @@ namespace :style do
     puts "Rubocop gem could not be loaded (#{err}), omitting task"
   end
 end
-
-desc 'Run all style checks'
-task test: %w[style:ruby]

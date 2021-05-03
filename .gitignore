@@ -22,7 +22,5 @@ kitchen.local.yml
 Puppetfile.lock
 .librarian/**
 modules/**
-!modules/pritunl
-!modules/pritunl/**
 spec/fixtures/**
 

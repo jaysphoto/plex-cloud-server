@@ -17,4 +17,6 @@ platforms:
   - name: centos-8.0
 
 suites:
-  - name: plex
+  - name: default
+    verifier:
+      default_pattern: true

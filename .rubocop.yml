@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - 'Puppetfile'
     - 'modules/**/*'
+    - 'spec/fixtures/**/*'
 
 Metrics/LineLength:
   Max: 120
