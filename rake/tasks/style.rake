@@ -1,10 +1,8 @@
 # Style tests. Rubocop only for now.
 namespace :style do
-  begin
-    require 'rubocop/rake_task'
-    desc 'Run Ruby style checks'
-    RuboCop::RakeTask.new(:ruby)
-  rescue LoadError => err
-    puts "Rubocop gem could not be loaded (#{err}), omitting task"
-  end
+  require 'rubocop/rake_task'
+  desc 'Run Ruby style checks'
+  RuboCop::RakeTask.new(:ruby)
+rescue LoadError => e
+  puts "Rubocop gem could not be loaded (#{e}), omitting task"
 end

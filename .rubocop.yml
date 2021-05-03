@@ -1,16 +1,17 @@
 AllCops:
-  TargetRubyVersion: 2.4 # Ruby 2.5 not supported yet?
+  TargetRubyVersion: 2.7
+  NewCops: enable
   Exclude:
     - 'Puppetfile'
     - 'modules/**/*'
     - 'spec/fixtures/**/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
   CountComments: false
   Max: 20
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context']
+  IgnoredMethods: ['describe', 'context']
 Style/FrozenStringLiteralComment:
   Enabled: false

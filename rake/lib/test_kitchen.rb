@@ -30,6 +30,7 @@ module TestKitchen
     config = kitchen_config(environment)
     instances = kitchen_instances(config, name)
     raise ArgumentError, 'Unknown instance, check "kitchen list"' if instances.length.zero?
+
     # run kitchen actions for each instance
     instances.each do |instance|
       actions.each do |action|

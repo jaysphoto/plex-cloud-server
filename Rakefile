@@ -7,4 +7,4 @@ CLEAN.include('spec/fixtures/')
 require 'puppetlabs_spec_helper/rake_tasks'
 
 # Default
-task test: %w[style:ruby spec]
+task test: %w[style:ruby syntax spec]
