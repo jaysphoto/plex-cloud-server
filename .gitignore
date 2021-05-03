@@ -19,7 +19,10 @@ Gemfile.lock
 kitchen.local.yml
 
 # Puppet
+Puppetfile.lock
 .librarian/**
 modules/**
 !modules/pritunl
 !modules/pritunl/**
+spec/fixtures/**
+

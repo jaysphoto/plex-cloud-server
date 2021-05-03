@@ -9,7 +9,10 @@ gem 'rake'
 
 group :test do
   gem 'puppet-lint'
+  gem 'puppet-syntax'
+  gem 'puppetlabs_spec_helper'
   gem 'rspec-puppet'
+  gem 'rspec-puppet-utils'
   gem 'rubocop', '~>0.49.0'
 end
 

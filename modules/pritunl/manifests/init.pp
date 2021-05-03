@@ -6,7 +6,7 @@ class pritunl {
 class pritunl::install {
   case $::facts['os']['name'] {
     'CentOS': {
-      include pritunl::centos
+      require pritunl::centos
     }
     default:  { fail("'${::facts['os']['name']}' not supported") }
   }
