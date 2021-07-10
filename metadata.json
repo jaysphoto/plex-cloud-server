@@ -4,26 +4,26 @@
   "author": "jaysphoto",
   "summary": "This module installs and manages Plex Media Server (PMS)",
   "license": "Apache 2.0",
-  "source": "https://github.com/jaysphoto/plex-media-server",
-  "project_page": "https://github.com/jaysphoto/plex-media-server",
-  "issues_url": "https://github.com/jaysphoto/plex-media-server/issues",
+  "source": "https://github.com/jaysphoto/plex-cloud-server",
+  "project_page": "https://github.com/jaysphoto/plex-cloud-server",
+  "issues_url": "https://github.com/jaysphoto/plex-cloud-server/issues",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
       "version_range": ">= 1.0.0"
-    },
-    {
-      "name": "WhatsARanjit/plexmediaserver",
-      "version_range": ">= 2.2.0"
     }
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "CentOS"
+    },
+    {
+      "operatingsystem": "Ubuntu"
     }
   ],
   "tags": [
     "CentOS",
+    "Ubuntu",
     "plex",
     "plexmediaserver"
   ]
