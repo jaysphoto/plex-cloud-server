@@ -2,15 +2,16 @@
 driver:
   name: docker
   use_sudo: <%= ENV['DOCKER_SUDO'] %>
-  run_command: /sbin/init
   privileged: true
   provision_command:
     - sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
     - systemctl enable sshd.service
+  run_command: /sbin/init
   cap_add:
     - SYS_ADMIN
   volume:
-    - /sys/fs/cgroup
+    - /sys/fs/cgroup:/sys/fs/cgroup
 
 platforms:
   - name: centos-7
+  - name: centos-8

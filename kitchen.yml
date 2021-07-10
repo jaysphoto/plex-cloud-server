@@ -1,6 +1,10 @@
 ---
 driver:
   name: vagrant
+  <% if ENV['VAGRANT_WSL_ENABLE_WINDOWS_ACCESS'] %>
+  ssh:
+    host: <%= %x(ip ro sh default | awk {'print $3'}) %>
+  <% end %>
 
 provisioner:
   name: puppet_apply
@@ -14,6 +18,7 @@ verifier: serverspec
 platforms:
   - name: centos-7
   - name: centos-8.0
+  - name: ubuntu-20.04
 
 suites:
   - name: default
