@@ -1,5 +1,5 @@
 # Plex Cloud Server
-[![Build Status](https://travis-ci.com/jaysphoto/plex-cloud-server.svg?branch=master)](https://travis-ci.com/jaysphoto/plex-cloud-server)
+[![Build Status](https://app.travis-ci.com/jaysphoto/plex-cloud-server.svg?branch=master)](https://app.travis-ci.com/jaysphoto/plex-cloud-server)
 
 Site and infrastructure configuration for running Plex Media Server.
 
