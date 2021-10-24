@@ -10,7 +10,4 @@ node default {
     plex_media_server_tmpdir                  => '/var/tmp',
     plex_install_latest                       => true,
   }
-
-  include ::plexmediaserver
-  include ::pritunl
 }
